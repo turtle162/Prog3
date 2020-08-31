@@ -18,7 +18,7 @@ namespace WpfApp2.Helpers
         }
         public async Task<List<Model>> GetAll()
         {
-            using (HttpResponseMessage responseMessage = await _aPIHelper.ApiClient.GetAsync("api/Models"))
+            using (HttpResponseMessage responseMessage = await _aPIHelper.ApiClient.GetAsync("api/Models/nowe"))
             {
                 var result = await responseMessage.Content.ReadAsAsync<List<Model>>();
                 return result;

@@ -21,10 +21,12 @@
       ScrollViewer.VerticalScrollBarVisibility="Auto"
       ScrollViewer.HorizontalScrollBarVisibility="Auto" MaxHeight="400" MaxWidth="780" MinWidth="200" Margin="10,32,128,366" >
             <DataGrid.Columns  >
-                <DataGridTextColumn  Width="130" Header="Id" Binding="{Binding id}"/>
-                <DataGridTextColumn  Width="125" Header="Pierwsza Data produkcji" Binding="{Binding FirstDateProduction, StringFormat=d}"/>
+                <DataGridTextColumn  Width="35" Header="Id" Binding="{Binding id}"/>
+                <DataGridTextColumn  Width="118" Header="Marka" Binding="{Binding Brand_}"/>
                 <DataGridTextColumn  Width="90" Header="Nazwa" Binding="{Binding Name}"/>
-                <DataGridTextColumn  Width="118" Header="Id marki" Binding="{Binding BrandId}"/>
+                <DataGridTextColumn  Width="200" Header="Pierwsza Data produkcji" Binding="{Binding FirstDateProduction, StringFormat=d}"/>
+                
+               
 
 
 

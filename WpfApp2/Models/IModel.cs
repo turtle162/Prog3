@@ -8,5 +8,6 @@ namespace WpfApp2.Models
         DateTime FirstDateProduction { get; set; }
         int id { get; set; }
         string Name { get; set; }
+        string Brand_ { get; set; }
     }
 }

@@ -12,5 +12,7 @@ namespace WpfApp2.Models
         public string Name { get; set; }
         public int BrandId { get; set; }
         public DateTime FirstDateProduction { get; set; }
+        public string Brand_ { get; set; }
+
     }
 }

@@ -21,9 +21,12 @@
       ScrollViewer.VerticalScrollBarVisibility="Auto"
       ScrollViewer.HorizontalScrollBarVisibility="Auto" MaxHeight="400" MaxWidth="780" MinWidth="200" Margin="10,32,128,366" >
             <DataGrid.Columns  >
-                <DataGridTextColumn  Width="130" Header="Id" Binding="{Binding Id}"/>
+                <!--<DataGridTextColumn  Width="130" Header="Id" Binding="{Binding Id}"/>-->
+                <DataGridTextColumn  Width="90" Header="Marka" Binding="{Binding Brand}"/>
+                <DataGridTextColumn  Width="90" Header="Model" Binding="{Binding Model}"/>
                 <DataGridTextColumn  Width="125" Header="Data produkcji" Binding="{Binding DateProduction, StringFormat=d}"/>
-                <DataGridTextColumn  Width="90" Header="Id Modelu" Binding="{Binding ModelId}"/>
+               
+               
                 <DataGridTextColumn  Width="118" Header="Rodzaj paliwa" Binding="{Binding FuelType}"/>
                 <DataGridTextColumn  Width="145" Header="Rodzaj nadwozia" Binding="{Binding BodyStyle}"/>
                 <DataGridTextColumn  Width="110" Header="Stan licznika" Binding="{Binding OdoMeter}"/>

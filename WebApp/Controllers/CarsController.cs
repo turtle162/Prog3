@@ -14,6 +14,20 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
+    public class Car2
+    {
+       
+        public string Id { get; set; }
+        public int ModelId { get; set; }
+       
+        public string Model { get; set; }
+        public DateTime DateProduction { get; set; }
+        public string FuelType { get; set; }
+        public string BodyStyle { get; set; }
+        public int OdoMeter { get; set; }
+        public string EngineType { get; set; }
+        public string Brand { get; set; }
+    }
     public class CarsController : ApiController
     {
         private WebAppContext db = new WebAppContext();
@@ -23,6 +37,33 @@ namespace WebApp.Controllers
         {
             return db.Cars;
         }
+        [HttpGet]
+        [Route("api/Cars/nowe")]
+        public async Task<List<Car2>> Getcar2()
+            {
+            List<Car2> car2s = new List<Car2>();
+            List<Car> cars = db.Cars.ToList();
+            foreach(Car car in cars)
+            {
+                Car2 car2 = new Car2();
+                car2.BodyStyle = car.BodyStyle;
+                car2.DateProduction = car.DateProduction;
+                car2.EngineType = car.EngineType;
+                car2.FuelType = car.FuelType;
+                car2.Id = car.Id;
+                car2.OdoMeter = car.OdoMeter;
+                Model model = await db.Models.FindAsync(car.ModelId);
+                car2.Model = model.Name;
+                Brand brand = await db.Brands.FindAsync(model.BrandId);
+                car2.Brand = brand.Name;
+                car2s.Add(car2);
+
+            }
+            return car2s;
+            
+            
+
+            }
 
         // GET: api/Cars/5
         [ResponseType(typeof(Car))]

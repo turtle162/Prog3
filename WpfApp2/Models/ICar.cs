@@ -9,7 +9,9 @@ namespace WpfApp2.Models
         string EngineType { get; set; }
         string FuelType { get; set; }
         string Id { get; set; }
-        int ModelId { get; set; }
+        
         int OdoMeter { get; set; }
+        string Model { get; set; }
+        string Brand { get; set; }
     }
 }

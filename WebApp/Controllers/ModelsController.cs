@@ -14,6 +14,16 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
+    public class Model2
+    {
+        public int id { get; set; }
+        public string Name { get; set; }
+        public int BrandId { get; set; }
+       
+        public Brand Brand { get; set; }
+        public DateTime FirstDateProduction { get; set; }
+        public string Brand_ { get; set; }
+    }
     public class ModelsController : ApiController
     {
         private WebAppContext db = new WebAppContext();
@@ -23,7 +33,24 @@ namespace WebApp.Controllers
         {
             return db.Models;
         }
-
+        [HttpGet]
+        [Route("api/Models/nowe")]
+        public async Task<List<Model2>> Getmodel2()
+        {
+            List<Model2> model2s = new List<Model2>();
+            List<Model> models = db.Models.ToList();
+            foreach(Model model in models)
+            {
+                Model2 model2 = new Model2();
+                model2.FirstDateProduction = model.FirstDateProduction;
+                model2.id = model.id;
+                model2.Name = model.Name;
+                Brand brand = await db.Brands.FindAsync(model.BrandId);
+                model2.Brand_ = brand.Name;
+                model2s.Add(model2);
+            }
+            return model2s;
+        }
         // GET: api/Models/5
         [ResponseType(typeof(Model))]
         public async Task<IHttpActionResult> GetModel(int id)

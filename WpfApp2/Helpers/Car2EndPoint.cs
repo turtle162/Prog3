@@ -18,7 +18,7 @@ namespace WpfApp2.Helpers
         }
         public async Task<List<Car>> GetAll()
         {
-            using (HttpResponseMessage responseMessage = await _aPIHelper.ApiClient.GetAsync("api/Cars"))
+            using (HttpResponseMessage responseMessage = await _aPIHelper.ApiClient.GetAsync("api/Cars/nowe"))
             {
                 var result = await responseMessage.Content.ReadAsAsync<List<Car>>();
                 return result;
