@@ -36,5 +36,13 @@ namespace WpfApp2.ViewModels
         {
             ActivateItem(IoC.Get<ModelViewModel>());
         }
+        public void carShow()
+        {
+            ActivateItem(IoC.Get<Car2ViewModel>());
+        }
+        public void brandShow()
+        {
+            ActivateItem(IoC.Get<BrandViewModel>());
+        }
     }
 }
