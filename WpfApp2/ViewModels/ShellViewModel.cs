@@ -15,5 +15,6 @@ namespace WpfApp2.ViewModels
             _carVM = carVM;
             ActivateItem(_carVM);
         }
+        
     }
 }

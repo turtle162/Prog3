@@ -34,6 +34,9 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
+        <Grid>
+            <ContentControl x:Name="ActiveItem" Margin="7"/>
+        </Grid>
     </DockPanel>
 
 </Window>
