@@ -19,7 +19,7 @@ namespace WpfApp2.Helpers
         private void InitializedClient()
         {
             ApiClient = new HttpClient();
-            ApiClient.BaseAddress = new Uri("http://http://localhost:60161/");
+            ApiClient.BaseAddress = new Uri("http://localhost:60161/");
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }

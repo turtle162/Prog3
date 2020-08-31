@@ -75,7 +75,9 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Helpers\APIHelper.cs" />
+    <Compile Include="Helpers\Car2EndPoint.cs" />
     <Compile Include="Helpers\IAPIHelper.cs" />
+    <Compile Include="Helpers\ICar2EndPoint.cs" />
     <Compile Include="Helpers\Inside2.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\ICar.cs" />

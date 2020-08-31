@@ -22,7 +22,7 @@ namespace WpfApp2.ViewModels
             _car2ViewModel = car2ViewModel;
             _container = container;
             _events.Subscribe(this);
-            ActivateItem(_container.GetInstance<CarViewModel>());
+            ActivateItem(IoC.Get<CarViewModel>());
            
             
         }

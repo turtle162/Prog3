@@ -19,12 +19,12 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="Cars" AlternatingRowBackground="Gray" CanUserAddRows="False" 
-                  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" 
+                 
                   AutoGenerateColumns="False"  ScrollViewer.CanContentScroll="True" 
       ScrollViewer.VerticalScrollBarVisibility="Auto"
-      ScrollViewer.HorizontalScrollBarVisibility="Auto" MaxHeight="400" MaxWidth="780" MinWidth="200" Margin="10,28,128,370">
-            <DataGrid.Columns>
-                <DataGridTextColumn  Width="50" Header="Id" Binding="{Binding id}"/>
+      ScrollViewer.HorizontalScrollBarVisibility="Auto" MaxHeight="400" MaxWidth="780" MinWidth="200" Margin="10,10,128,388" >
+            <DataGrid.Columns  >
+                <DataGridTextColumn  Width="50" Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn MinWidth="100" Width="150" Header="Data produkcji" Binding="{Binding DateProduction, StringFormat=d}"/>
                 <DataGridTextColumn  Width="70" Header="Id Modelu" Binding="{Binding ModelId}"/>
                 <DataGridTextColumn  Width="130" Header="Rodzaj paliwa" Binding="{Binding FuelType}"/>
