@@ -32,5 +32,9 @@ namespace WpfApp2.ViewModels
             ActivateItem(_car2ViewModel);
             
         }
+        public void modelShow()
+        {
+            ActivateItem(IoC.Get<ModelViewModel>());
+        }
     }
 }

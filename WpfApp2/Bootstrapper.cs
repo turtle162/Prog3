@@ -21,7 +21,7 @@ namespace WpfApp2
         protected override void Configure()
         {
             _container.Instance(_container)
-                .PerRequest<ICar2EndPoint, Car2EndPoint>();
+                .PerRequest<ICar2EndPoint, Car2EndPoint>().PerRequest<IModelEndPoint, ModelEndPoint>();
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
