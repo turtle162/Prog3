@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApp2.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2.Views"
+        mc:Ignorable="d" FontSize="18"
+        Title="ShellView" Height="450" Width="800">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Marki" Width="138">
+                <MenuItem x:Name="brandShow" Header="Wyświetl">
+
+                </MenuItem>
+                <MenuItem x:Name="brandAdd" Header="Dodaj">
+
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Modele" Width="139">
+                <MenuItem x:Name="modelShow" Header="Wyświetl">
+
+                </MenuItem>
+                <MenuItem x:Name="modelAdd" Header="Dodaj">
+
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Samochody" Width="138">
+                <MenuItem x:Name="carShow" Header="Wyświetl">
+
+                </MenuItem>
+                <MenuItem x:Name="carAdd" Header="Dodaj">
+
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+    </DockPanel>
+
+</Window>

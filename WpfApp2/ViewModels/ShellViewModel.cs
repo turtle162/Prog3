@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp.ViewModels
+namespace WpfApp2.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        private CarViewModel _carViewModel;
-        public ShellViewModel(CarViewModel carViewModel)
+        private CarViewModel _carVM;
+        public ShellViewModel(CarViewModel carVM)
         {
-            _carViewModel = carViewModel;
-            ActivateItem(_carViewModel);
+            _carVM = carVM;
+            ActivateItem(_carVM);
         }
     }
 }
