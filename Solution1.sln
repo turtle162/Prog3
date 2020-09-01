@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp2", "WpfApp2\WpfApp2.csproj", "{5C862F76-4174-440D-9207-0BC6F8FF4998}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp2", "WebApp2\WebApp2.csproj", "{9CBDAA93-16C2-42FC-9527-7CB860CE85D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5C862F76-4174-440D-9207-0BC6F8FF4998}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C862F76-4174-440D-9207-0BC6F8FF4998}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C862F76-4174-440D-9207-0BC6F8FF4998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CBDAA93-16C2-42FC-9527-7CB860CE85D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CBDAA93-16C2-42FC-9527-7CB860CE85D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CBDAA93-16C2-42FC-9527-7CB860CE85D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CBDAA93-16C2-42FC-9527-7CB860CE85D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

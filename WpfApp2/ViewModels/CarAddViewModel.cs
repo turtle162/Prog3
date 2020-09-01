@@ -23,7 +23,7 @@ namespace WpfApp2.ViewModels
 
         }
        
-        private int _ModelId { get; set; }
+        private string _Model { get; set; }
         private string _Id { get; set; }
         private DateTime _DateProduction { get; set; }
         private string _FuelType { get; set; }
@@ -66,13 +66,13 @@ namespace WpfApp2.ViewModels
                 NotifyOfPropertyChange(() => BodyStyle);
             }
         }
-        public int ModelId
+        public string Model
         {
-            get { return _ModelId; }
+            get { return _Model; }
             set
             {
-                _ModelId = value;
-                NotifyOfPropertyChange(() => ModelId);
+                _Model = value;
+                NotifyOfPropertyChange(() => Model);
             }
         }
         public int OdoMeter
@@ -103,7 +103,7 @@ namespace WpfApp2.ViewModels
                 EngineType = this.EngineType,
                 FuelType = this.FuelType,
                 Id = this.Id,
-                ModelId = this.ModelId,
+                Model = this.Model,
                 OdoMeter = this.OdoMeter
 
 

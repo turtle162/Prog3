@@ -9,17 +9,17 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebApp.Data;
-using WebApp.Models;
+using WebApp2.Data;
+using WebApp2.Models;
 
-namespace WebApp.Controllers
+namespace WebApp2.Controllers
 {
     public class Car2
     {
-       
+
         public string Id { get; set; }
         public int ModelId { get; set; }
-       
+
         public string Model { get; set; }
         public DateTime DateProduction { get; set; }
         public string FuelType { get; set; }
@@ -30,20 +30,14 @@ namespace WebApp.Controllers
     }
     public class CarsController : ApiController
     {
-        private WebAppContext db = new WebAppContext();
-
-        // GET: api/Cars
-        public IQueryable<Car> GetCars()
-        {
-            return db.Cars;
-        }
+        private WebApp2Context db = new WebApp2Context();
         [HttpGet]
         [Route("api/Cars/nowe")]
         public async Task<List<Car2>> Getcar2()
-            {
+        {
             List<Car2> car2s = new List<Car2>();
             List<Car> cars = db.Cars.ToList();
-            foreach(Car car in cars)
+            foreach (Car car in cars)
             {
                 Car2 car2 = new Car2();
                 car2.BodyStyle = car.BodyStyle;
@@ -60,24 +54,19 @@ namespace WebApp.Controllers
 
             }
             return car2s;
-            
-            
 
-            }
-        // POST: api/Cars
+
+
+        }
         [Route("api/Cars/nowe2")]
         [ResponseType(typeof(Car))]
-        public async Task<IHttpActionResult> POstCar2(Car2 car2)
+        public async Task<IHttpActionResult> PostCar2(Car2 car2)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
             Model model =  db.Models.Where(q => q.Name == car2.Model).FirstOrDefault();
-            if(model == null)
-            {
-                model = new Model();
-            }
             Car car = new Car()
             {
                 BodyStyle = car2.BodyStyle,
@@ -106,9 +95,14 @@ namespace WebApp.Controllers
                 }
             }
 
-            return Ok(car);
-            
+            return CreatedAtRoute("DefaultApi", new { id = car.Id }, car);
         }
+        // GET: api/Cars
+        public IQueryable<Car> GetCars()
+        {
+            return db.Cars;
+        }
+
         // GET: api/Cars/5
         [ResponseType(typeof(Car))]
         public async Task<IHttpActionResult> GetCar(string id)
@@ -122,40 +116,40 @@ namespace WebApp.Controllers
             return Ok(car);
         }
 
-        //// PUT: api/Cars/5
-        //[ResponseType(typeof(void))]
-        //public async Task<IHttpActionResult> PutCar(string id, Car car)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // PUT: api/Cars/5
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PutCar(string id, Car car)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    if (id != car.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+            if (id != car.Id)
+            {
+                return BadRequest();
+            }
 
-        //    db.Entry(car).State = EntityState.Modified;
+            db.Entry(car).State = EntityState.Modified;
 
-        //    try
-        //    {
-        //        await db.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!CarExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CarExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
         // POST: api/Cars
         [ResponseType(typeof(Car))]

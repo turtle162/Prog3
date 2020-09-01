@@ -28,11 +28,15 @@ namespace WpfApp2.Helpers
         }
         public async Task PostCar(CarAdd car)
         {
-            using (HttpResponseMessage responseMessage = await _aPIHelper.ApiClient.PostAsJsonAsync("api/Cars", car))
+            using (HttpResponseMessage responseMessage = await _aPIHelper.ApiClient.PostAsJsonAsync("api/Cars/nowe2", car))
             {
-                if(responseMessage.IsSuccessStatusCode)
+                if(responseMessage.StatusCode == System.Net.HttpStatusCode.OK )
                 {
-                    ActivateItem(IoC.Get<Car2ViewModel>());
+                    //ActivateItem(IoC.Get<Car2ViewModel>());
+                }
+                else
+                {
+                    throw new Exception();
                 }
             }
         }
