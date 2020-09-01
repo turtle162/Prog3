@@ -2,7 +2,7 @@
 
 namespace WpfApp2.Models
 {
-    public interface ICar
+    public interface ICarAdd
     {
         string BodyStyle { get; set; }
         DateTime DateProduction { get; set; }
@@ -10,8 +10,7 @@ namespace WpfApp2.Models
         string FuelType { get; set; }
         string Id { get; set; }
 
+        int ModelId { get; set; }
         int OdoMeter { get; set; }
-        string Model { get; set; }
-        string Brand { get; set; }
     }
 }

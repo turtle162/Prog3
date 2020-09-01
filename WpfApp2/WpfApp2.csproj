@@ -85,10 +85,13 @@
     <Compile Include="Helpers\Inside2.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\CarAdd.cs" />
     <Compile Include="Models\ICar.cs" />
+    <Compile Include="Models\ICarAdd.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="ViewModels\BrandViewModel.cs" />
+    <Compile Include="ViewModels\CarAddViewModel.cs" />
     <Compile Include="ViewModels\ModelViewModel.cs" />
     <Compile Include="ViewModels\CarViewModel.cs" />
     <Compile Include="ViewModels\Car2ViewModel.cs" />
@@ -98,6 +101,9 @@
     </Compile>
     <Compile Include="Views\Car2View.xaml.cs">
       <DependentUpon>Car2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CarAddView.xaml.cs">
+      <DependentUpon>CarAddView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CarView.xaml.cs">
       <DependentUpon>CarView.xaml</DependentUpon>
@@ -125,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Car2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CarAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

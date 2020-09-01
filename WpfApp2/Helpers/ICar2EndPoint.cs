@@ -7,5 +7,6 @@ namespace WpfApp2.Helpers
     public interface ICar2EndPoint
     {
         Task<List<Car>> GetAll();
+        Task PostCar(CarAdd car);
     }
 }

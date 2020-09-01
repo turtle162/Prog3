@@ -64,7 +64,45 @@ namespace WebApp.Controllers
             
 
             }
+        // POST: api/Cars
+        [Route("api/Cars/nowe2")]
+        [ResponseType(typeof(Car))]
+        public async Task<IHttpActionResult> PostCar(Car2 car2)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            Model model = await db.Models.FindAsync(car2.Model);
+            Car car = new Car()
+            {
+                BodyStyle = car2.BodyStyle,
+                DateProduction = car2.DateProduction,
+                EngineType = car2.EngineType,
+                FuelType = car2.FuelType,
+                ModelId = model.id,
+                OdoMeter = car2.OdoMeter
+            };
+            db.Cars.Add(car);
 
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (CarExists(car.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtRoute("DefaultApi", new { id = car.Id }, car);
+        }
         // GET: api/Cars/5
         [ResponseType(typeof(Car))]
         public async Task<IHttpActionResult> GetCar(string id)
