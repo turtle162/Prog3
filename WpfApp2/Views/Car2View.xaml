@@ -15,7 +15,7 @@
            
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="Cars" AlternatingRowBackground="Gray" CanUserAddRows="False"  
+        <DataGrid x:Name="Cars"  CanUserAddRows="False"  
                  
                   AutoGenerateColumns="False"  ScrollViewer.CanContentScroll="True" 
       ScrollViewer.VerticalScrollBarVisibility="Auto"

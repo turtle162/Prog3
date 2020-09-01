@@ -12,9 +12,15 @@ namespace WpfApp2.ViewModels
     public class CarAddViewModel : Screen
     {
         ICar2EndPoint _car2EndPoint;
-        public CarAddViewModel(ICar2EndPoint car2EndPoint)
+        private readonly AddedViewModel _addedViewModel;
+        private readonly IWindowManager _windowManager;
+        public CarAddViewModel(ICar2EndPoint car2EndPoint, AddedViewModel addedViewModel, IWindowManager windowManager)
         {
             _car2EndPoint = car2EndPoint;
+            _addedViewModel = addedViewModel;
+            _windowManager = windowManager;
+           
+
         }
        
         private int _ModelId { get; set; }
@@ -103,7 +109,18 @@ namespace WpfApp2.ViewModels
 
             };
             //
-            await _car2EndPoint.PostCar(car);
+            try
+            {
+                await _car2EndPoint.PostCar(car);
+                _addedViewModel.UpdateMessage("Komunikat", "Dodano rekord");
+                _windowManager.ShowWindow(_addedViewModel);
+            }
+            catch
+            {
+                _addedViewModel.UpdateMessage("Ostrzeżenie", "Nie dodano rekord");
+                _windowManager.ShowWindow(_addedViewModel);
+            }
+           
         }
     }
 }

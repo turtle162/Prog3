@@ -90,6 +90,10 @@
     <Compile Include="Models\ICarAdd.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Model.cs" />
+    <Compile Include="ViewModels\AddedViewModel.cs" />
+    <Compile Include="Views\AddedView.xaml.cs">
+      <DependentUpon>AddedView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BrandViewModel.cs" />
     <Compile Include="ViewModels\CarAddViewModel.cs" />
     <Compile Include="ViewModels\ModelViewModel.cs" />
@@ -126,6 +130,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\BrandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
