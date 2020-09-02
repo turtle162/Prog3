@@ -24,5 +24,19 @@ namespace WpfApp2.Helpers
                 return result;
             }
         }
+        public async Task PostBrand(BrandAdd brand)
+        {
+            using (HttpResponseMessage responseMessage = await _aPIHelper.ApiClient.PostAsJsonAsync("api/Brands", brand))
+            {
+                if (responseMessage.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    //ActivateItem(IoC.Get<Car2ViewModel>());
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+        }
     }
 }

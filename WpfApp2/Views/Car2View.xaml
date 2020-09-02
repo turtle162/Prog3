@@ -19,7 +19,7 @@
                  
                   AutoGenerateColumns="False"  ScrollViewer.CanContentScroll="True" 
       ScrollViewer.VerticalScrollBarVisibility="Auto"
-      ScrollViewer.HorizontalScrollBarVisibility="Auto" MaxHeight="400" MaxWidth="800" MinWidth="200" Margin="0,32,138,366" >
+      ScrollViewer.HorizontalScrollBarVisibility="Auto" MaxHeight="400" MaxWidth="800" MinWidth="200" Margin="10,10,128,388" >
             <DataGrid.Columns  >
                 <DataGridTextColumn  Width="130" Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn  Width="90" Header="Marka" Binding="{Binding Brand}"/>

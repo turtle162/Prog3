@@ -24,10 +24,43 @@ namespace WebApp.Controllers
         public DateTime FirstDateProduction { get; set; }
         public string Brand_ { get; set; }
     }
+    public class Model3
+    {
+       
+        public string Name { get; set; }
+        public DateTime FirstDateProduction { get; set; }
+        public string Brand_ { get; set; }
+    }
     public class ModelsController : ApiController
     {
         private WebAppContext db = new WebAppContext();
+        // POST: api/Models
+        [Route("api/Models/nowe2")]
+        [ResponseType(typeof(Model))]
+        public async Task<IHttpActionResult> PostModel2(Model3 model3)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
+            Brand brand = db.Brands.Where(q => q.Name == model3.Brand_).FirstOrDefault();
+            if(brand == null)
+            {
+                brand = new Brand();
+            }
+            Model model = new Model()
+            {
+                Name = model3.Name,
+                FirstDateProduction = model3.FirstDateProduction,
+                BrandId = brand.id
 
+
+            };
+            db.Models.Add(model);
+            await db.SaveChangesAsync();
+
+            return Ok(model);
+        }
         // GET: api/Models
         public IQueryable<Model> GetModels()
         {

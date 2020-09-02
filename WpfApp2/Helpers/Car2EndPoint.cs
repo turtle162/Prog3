@@ -11,7 +11,7 @@ using WpfApp2.ViewModels;
 namespace WpfApp2.Helpers
 {
 
-    public class Car2EndPoint : Conductor<object>, ICar2EndPoint
+    public class Car2EndPoint :  ICar2EndPoint
     {
         private readonly IAPIHelper _aPIHelper;
         public Car2EndPoint(IAPIHelper aPIHelper)

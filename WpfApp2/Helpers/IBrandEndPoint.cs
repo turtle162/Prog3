@@ -7,5 +7,6 @@ namespace WpfApp2.Helpers
     public interface IBrandEndPoint
     {
         Task<List<Brand>> GetAll();
+        Task PostBrand(BrandAdd brand);
     }
 }

@@ -84,7 +84,7 @@ namespace WebApp.Controllers
             db.Brands.Add(brand);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = brand.id }, brand);
+            return Ok(brand);
         }
 
         // DELETE: api/Brands/5

@@ -7,5 +7,6 @@ namespace WpfApp2.Helpers
     public interface IModelEndPoint
     {
         Task<List<Model>> GetAll();
+        Task PostModel(ModelAdd model);
     }
 }

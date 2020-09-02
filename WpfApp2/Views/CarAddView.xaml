@@ -15,19 +15,19 @@
             <ColumnDefinition  Width="auto" />
             <ColumnDefinition  Width="auto"  />
         </Grid.ColumnDefinitions>
-        <TextBlock Margin="72,62,601,342" FontSize="25" Grid.Row="1" Text="Nazwa modelu"/>
-        <TextBlock Margin="464,146,209,258" FontSize="25" Grid.Row="1" Text="Licznik"/>
-        <TextBlock Margin="72,146,601,258" FontSize="25" Grid.Row="1" Text="Data prod"/>
-        <TextBlock Margin="464,62,176,342" FontSize="25" Grid.Row="1"><Run Text="Typ"/><Run Text=" "/><Run Text="nadwozia"/></TextBlock>
-        <TextBlock Margin="77,225,596,179" FontSize="25" Grid.Row="1" Text="Typ paliwa"/>
-        <TextBox x:Name="DateProduction" Margin="242,146,428,264" Grid.Row="1" />
-        <TextBox x:Name="Model" Margin="242,68,428,342" Grid.Row="1" />
-        <TextBox x:Name="FuelType" Margin="242,225,428,185" Grid.Row="1" />
-        <TextBox x:Name="BodyStyle" Margin="629,68,41,342" Grid.Row="1" />
+        <TextBlock Margin="43,62,630,342" FontSize="25" Grid.Row="1" Text="Nazwa modelu"/>
+        <TextBlock Margin="435,146,238,258" FontSize="25" Grid.Row="1" Text="Licznik"/>
+        <TextBlock Margin="43,146,630,258" FontSize="25" Grid.Row="1" Text="Data prod"/>
+        <TextBlock Margin="435,62,205,342" FontSize="25" Grid.Row="1"><Run Text="Typ"/><Run Text=" "/><Run Text="nadwozia"/></TextBlock>
+        <TextBlock Margin="48,225,625,179" FontSize="25" Grid.Row="1" Text="Typ paliwa"/>
+        <TextBox x:Name="DateProduction" Margin="213,146,457,264" Grid.Row="1" />
+        <TextBox x:Name="Model" Margin="213,68,457,342" Grid.Row="1" />
+        <TextBox x:Name="FuelType" Margin="213,225,457,185" Grid.Row="1" />
+        <TextBox x:Name="BodyStyle" Margin="600,68,70,342" Grid.Row="1" />
         <Button Padding="60 10"  x:Name="AddCar" Margin="51,311,567,90" Grid.Row="1">
             Wpisz</Button>
-        <TextBox x:Name="OdoMeter" Margin="629,146,41,264" Grid.Row="1" />
-        <TextBox x:Name="Id" Margin="629,231,41,179" Grid.Row="1" />
-        <TextBlock Margin="464,225,209,179" FontSize="25" Grid.Row="1" Text="VIN"/>
+        <TextBox x:Name="OdoMeter" Margin="600,146,70,264" Grid.Row="1" />
+        <TextBox x:Name="Id" Margin="600,231,70,179" Grid.Row="1" />
+        <TextBlock Margin="435,225,238,179" FontSize="25" Grid.Row="1" Text="VIN"/>
     </Grid>
 </UserControl>
